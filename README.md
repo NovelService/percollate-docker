@@ -1,5 +1,5 @@
 # percollate-docker
-Docker image containing percollate running in user mode with a minimal set of permissions.
+Docker image containing [percollate](https://github.com/danburzo/percollate) running in user mode with a minimal set of permissions.
 
 Get it from https://hub.docker.com/repository/docker/xiangronglin/percollate-alpine
 with `docker pull xiangronglin/percollate-alpine`
