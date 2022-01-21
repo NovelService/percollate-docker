@@ -1,6 +1,9 @@
 # percollate-docker
 Docker image containing percollate running in user mode with a minimal set of permissions.
 
+Get it from https://hub.docker.com/repository/docker/xiangronglin/percollate-alpine
+with `docker pull xiangronglin/percollate-alpine`
+
 The missing permissions are added with security options (preferred) or through linux capabilities.
 See this article: https://ndportmann.com/chrome-in-docker/
 
