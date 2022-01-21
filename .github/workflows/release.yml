@@ -1,0 +1,24 @@
+name: Release
+
+env:
+  # Get tag with shell expansion https://github.community/t/how-to-get-just-the-tag-name/16241/2
+  IMAGE_NAME: xiangronglin/percollate-alpine
+
+on:
+  push:
+    tags:
+      - "*"
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: build
+        run: docker build . -t ${{ env.IMAGE_NAME }}:latest -t ${{ env.IMAGE_NAME }}:${GITHUB_REF##*/} 
+
+      - name: login
+        run: echo ${{ secrets.DOCKER_PASSWORD }} | docker login -u xiangronglin --password-stdin
+      
+      - name: push
+        run: docker push ${{ env.IMAGE_NAME }} -a
