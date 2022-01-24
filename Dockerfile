@@ -20,7 +20,7 @@ ENV PATH="/node_modules/.bin:${PATH}"
 
 # Puppeteer v10.2.0 works with Chromium 93.
 RUN yarn add puppeteer@10.2.0
-RUN yarn add percollate@v2.1.0
+RUN yarn add percollate@v2.2.0
 
 # Add user so we don't need --no-sandbox.
 RUN addgroup -S user && adduser -S -g user user \
